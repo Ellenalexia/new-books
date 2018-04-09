@@ -1,5 +1,5 @@
-# H1 Lists of new books
-1. Use Millennium to get data about books that have been catalogued in the previous month in file with delimiter ^
+# Lists of new books
+1. Use Millennium to get data about books that have been cataloged in the previous month in file with delimiter ^
 2. Use this script to take delimited data and output XML
 3. Use CMS to transform and publish XML
 

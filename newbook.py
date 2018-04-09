@@ -9,8 +9,9 @@ df.CALL = df.CALL.str.replace('(?P<ClassLetters>\A[A-Z]*(?=[0-9]))', '\g<ClassLe
 df.SUBJECT = df.SUBJECT.str.strip()
 # remove oclc fast tags. example [;United States. fast (OCoLC)fst01204155]
 df.SUBJECT = df.SUBJECT.str.replace("\;[^<;]*\.? fast \(OCoLC\)fst[0-9]*","")
-# remove oclc fast date facets. example [;1900-1999 fast]
-df.SUBJECT = df.SUBJECT.str.replace('\;[0-9]{4} ?\- ?[0-9]{4} fast', '')
+# remove oclc fast date facets. example [;1900-1999 fast][; 1787 fast]
+df.SUBJECT = df.SUBJECT.str.replace('\;*[0-9]{4} ?\- ?[0-9]{4} fast', '')
+df.SUBJECT = df.SUBJECT.str.replace('\;*[0-9]{4} fast', '')
 # remove local genre heading notations
 df.SUBJECT = df.SUBJECT.str.replace('(\.* lcgft)|(\. local)', '.')
 # add spaces between semicolons
